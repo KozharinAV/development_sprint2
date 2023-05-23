@@ -1,0 +1,18 @@
+{
+  "name": "development",
+  "version": "1.0.0",
+  "description": "individual development plan",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
+  },
+  "author": "Kozharin A.V.",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
