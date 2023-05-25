@@ -5,7 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:comparators": "ts-node index.ts"
+    "start:sorting": "ts-node index.ts",
+    "start:strategy": "ts-node strategy.ts",
+    "start:template": "ts-node template.ts"
   },
   "author": "Kozharin A.V.",
   "license": "ISC",
