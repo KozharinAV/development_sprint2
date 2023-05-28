@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:sorting": "ts-node index.ts",
     "start:strategy": "ts-node strategy.ts",
-    "start:template": "ts-node template.ts"
+    "start:template": "ts-node template.ts",
+    "start:team": "ts-node team.ts",
+    "start:factory": "ts-node abstractFactory.ts",
+    "start:clock": "ts-node clock.ts"
   },
   "author": "Kozharin A.V.",
   "license": "ISC",
