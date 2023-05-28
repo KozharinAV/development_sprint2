@@ -10,7 +10,7 @@
     "start:template": "ts-node template.ts",
     "start:team": "ts-node team.ts",
     "start:factory": "ts-node abstractFactory.ts",
-    "start:clock": "ts-node clock.ts"
+    "start:adapter": "ts-node adapter.ts"
   },
   "author": "Kozharin A.V.",
   "license": "ISC",
