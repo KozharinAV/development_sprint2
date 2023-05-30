@@ -23,7 +23,7 @@ remoteControl.setCommand(tvOnCommand); // Кнопка 2 включает тел
 remoteControl.setCommand(tvOffCommand); // Кнопка 3 выключает телевизор
 
 remoteControl.pressButton(0); // Включить свет
-remoteControl.pressButton(2); // Выключить телевизор
+remoteControl.pressButton(2); // Включить телевизор
 remoteControl.undo(); // Отменить операцию (включение телевизора)
 remoteControl.redo(); // Вернуть операцию (включение телевизора)
 remoteControl.pressButton(1);//Выключить свет
