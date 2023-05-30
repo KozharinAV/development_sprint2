@@ -1,4 +1,4 @@
-import { AnalogClock, AnalogClockAdapter } from "./src/patterns/adapterClasses"
+import { AnalogClock, AnalogClockAdapter } from "../patterns/adapterClasses"
 
 const analogClock = new AnalogClock();
 analogClock.setHourArrowRotation(90);

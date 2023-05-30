@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:sorting": "ts-node index.ts",
-    "start:strategy": "ts-node strategy.ts",
-    "start:template": "ts-node template.ts",
-    "start:team": "ts-node team.ts",
-    "start:factory": "ts-node abstractFactory.ts",
-    "start:adapter": "ts-node adapter.ts"
+    "start:strategy": "ts-node src/launchers/strategy.ts",
+    "start:template": "ts-node src/launchers/template.ts",
+    "start:team": "ts-node src/launchers/team.ts",
+    "start:factory": "ts-node src/launchers/abstractFactory.ts",
+    "start:adapter": "ts-node src/launchers/adapter.ts"
   },
   "author": "Kozharin A.V.",
   "license": "ISC",

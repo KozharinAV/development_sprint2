@@ -1,4 +1,4 @@
-import { Employee } from "./src/patterns/strategyClasses";
+import { Employee } from "../patterns/strategyClasses";
 
 const adultEmployee = new Employee("Иван", 25, 20);
 console.log(`${adultEmployee.calculateSalary()} руб.`);

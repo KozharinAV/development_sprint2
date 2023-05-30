@@ -6,7 +6,7 @@ import {
     TVOnCommand,
     TVOffCommand,
     RemoteControl
-} from "./src/patterns/teamClasses";
+} from "../patterns/teamClasses";
 
 const light = new Light();
 const tv = new TV();

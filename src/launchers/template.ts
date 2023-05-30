@@ -1,4 +1,4 @@
-import { OkroshkaRecipe, ChickenNoodleSoupRecipe } from "./src/patterns/templateClasses";
+import { OkroshkaRecipe, ChickenNoodleSoupRecipe } from "../patterns/templateClasses";
 
 const okroshkaRecipe = new OkroshkaRecipe();
 okroshkaRecipe.makeSoup();

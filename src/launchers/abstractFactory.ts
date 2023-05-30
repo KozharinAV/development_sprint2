@@ -1,4 +1,4 @@
-import { SamsungSmartphoneFactory, AppleSmartphoneFactory } from "./src/patterns/abstractFactoryClasses"
+import { SamsungSmartphoneFactory, AppleSmartphoneFactory } from "../patterns/abstractFactoryClasses"
 
 const samsungFactory = new SamsungSmartphoneFactory();
 const appleFactory = new AppleSmartphoneFactory();
