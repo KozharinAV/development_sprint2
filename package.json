@@ -10,7 +10,9 @@
     "start:template": "ts-node src/launchers/template.ts",
     "start:team": "ts-node src/launchers/team.ts",
     "start:factory": "ts-node src/launchers/abstractFactory.ts",
-    "start:adapter": "ts-node src/launchers/adapter.ts"
+    "start:adapter": "ts-node src/launchers/adapter.ts",
+    "start:observer": "ts-node src/launchers/observer.ts",
+    "start:bridge": "ts-node src/launchers/bridge.ts"
   },
   "author": "Kozharin A.V.",
   "license": "ISC",
