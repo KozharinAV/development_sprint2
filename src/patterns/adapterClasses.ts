@@ -78,10 +78,10 @@ export class AnalogClockAdapter implements Clock {
 
         console.log(`Цифровые часы (Адаптер): ${hours}:${minutes}:${seconds}`);
     }
-    setTime(hourArrowRotation: number, minuteArrowRotation: number, secondArrowRotation: number): void {
-        this.analogClock.setHourArrowRotation(hourArrowRotation)
-        this.analogClock.setMinuteArrowRotation(minuteArrowRotation)
-        this.analogClock.setSecondArrowRotation(secondArrowRotation)
+    setTime(hours: number, minutes: number, seconds: number): void {
+        this.analogClock.setHourArrowRotation(hours * 30)
+        this.analogClock.setMinuteArrowRotation(minutes * 6)
+        this.analogClock.setSecondArrowRotation(seconds * 6)
     }
     getAnalogTime() {
         this.analogClock.displayTime()

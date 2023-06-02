@@ -8,6 +8,6 @@ digitalClock.displayTime()
 analogClock.displayTime()
 
 adapter.displayTime();
-adapter.setTime(120, 60, 180)
+adapter.setTime(12, 25, 45)
 adapter.displayTime()
 adapter.getAnalogTime()
