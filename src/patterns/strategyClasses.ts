@@ -8,7 +8,7 @@ interface SalaryCalculationStrategy {
     calculateWeekSalary(): number;
 }
 
-class AdultTimeStrategy implements SalaryCalculationStrategy {
+export class AdultTimeStrategy implements SalaryCalculationStrategy {
     private hourlyRate: number;
 
     constructor(hourlyRate: number) {
@@ -20,7 +20,7 @@ class AdultTimeStrategy implements SalaryCalculationStrategy {
     }
 }
 
-class TeenagerTimeStrategy implements SalaryCalculationStrategy {
+export class TeenagerTimeStrategy implements SalaryCalculationStrategy {
     private hourlyRate: number;
 
     constructor(hourlyRate: number) {
@@ -32,7 +32,7 @@ class TeenagerTimeStrategy implements SalaryCalculationStrategy {
     }
 }
 
-class KidTimeStrategy implements SalaryCalculationStrategy {
+export class KidTimeStrategy implements SalaryCalculationStrategy {
     private hourlyRate: number;
 
     constructor(hourlyRate: number) {
@@ -48,12 +48,10 @@ export class Employee {
     private age: number;
     private strategy: SalaryCalculationStrategy;
 
-    constructor(name: string, age: number, hourlyRate: number) {
+    constructor(name: string, age: number, stratagy: SalaryCalculationStrategy) {
         this.name = name;
         this.age = age;
-        if (age > 18) this.strategy = new AdultTimeStrategy(hourlyRate)
-        else if (age < 18 && age >= 16) this.strategy = new TeenagerTimeStrategy(hourlyRate)
-        else this.strategy = new KidTimeStrategy(hourlyRate)
+        this.strategy = stratagy
     }
 
     calculateSalary(): number {

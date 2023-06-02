@@ -1,10 +1,5 @@
-import { AnalogClock, AnalogClockAdapter } from "../patterns/adapterClasses"
+import { AnalogClockAdapter } from "../patterns/adapterClasses"
 
-const analogClock = new AnalogClock();
-analogClock.setHourArrowRotation(90);
-analogClock.setMinuteArrowRotation(180);
-analogClock.setSecondArrowRotation(270);
-
-const adapter = new AnalogClockAdapter(analogClock);
+const adapter = new AnalogClockAdapter(90, 180, 270);
 
 adapter.displayTime();

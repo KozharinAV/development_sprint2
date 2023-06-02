@@ -4,21 +4,21 @@ interface Command {
 }
 
 export class Light {
-    on(): void {
+    lightOn(): void {
         console.log("Свет включен");
     }
 
-    off(): void {
+    lightOff(): void {
         console.log("Свет выключен");
     }
 }
 
 export class TV {
-    on(): void {
+    tvOn(): void {
         console.log("Телевизор включен");
     }
 
-    off(): void {
+    tvOff(): void {
         console.log("Телевизор выключен");
     }
 }
@@ -31,11 +31,11 @@ export class LightOnCommand implements Command {
     }
 
     execute(): void {
-        this.light.on();
+        this.light.lightOn();
     }
 
     undo(): void {
-        this.light.off();
+        this.light.lightOff();
     }
 }
 
@@ -47,11 +47,11 @@ export class LightOffCommand implements Command {
     }
 
     execute(): void {
-        this.light.off();
+        this.light.lightOff();
     }
 
     undo(): void {
-        this.light.on();
+        this.light.lightOn();
     }
 }
 
@@ -63,11 +63,11 @@ export class TVOnCommand implements Command {
     }
 
     execute(): void {
-        this.tv.on();
+        this.tv.tvOn();
     }
 
     undo(): void {
-        this.tv.off();
+        this.tv.tvOff();
     }
 }
 
@@ -79,11 +79,11 @@ export class TVOffCommand implements Command {
     }
 
     execute(): void {
-        this.tv.off();
+        this.tv.tvOff();
     }
 
     undo(): void {
-        this.tv.on();
+        this.tv.tvOn();
     }
 }
 

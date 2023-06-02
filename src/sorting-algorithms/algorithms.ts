@@ -105,43 +105,20 @@ export const heapSort = (array: Array<any>, comparator: Function): Array<any> =>
 }
 
 //Quick sort
-const sort = (array: Array<any>, left: number, right: number, comparator: Function) => {
-  const partition = (
-    array: Array<any>,
-    left: number,
-    right: number,
-    supportElement: any,
-    comparator: Function
-  ) => {
-    while (true) {
-      while (comparator(array[left], supportElement) < 0) {
-        left += 1
-      }
-      while (comparator(array[right], supportElement) > 0) {
-        right -= 1
-      }
-      if (left >= right) {
-        return right + 1
-      }
-      swap(array, left, right)
+export const quickSort = (array: Array<any>, comparator: Function): Array<any> => {
 
-      left += 1
-      right -= 1
-    }
-  }
-
-  const length = right - left + 1
-
-  if (length < 2) {
+  if (array.length < 2) {
     return array
   }
 
-  const supportElement = array[left]
+  const supportElement = array[array.length - 1]
+  const leftArray = []
+  const rightArray = []
 
-  const splitIndex = partition(array, left, right, supportElement, comparator)
-  sort(array, left, splitIndex - 1, comparator)
-  sort(array, splitIndex, right, comparator)
+  for (let i = 0; i < array.length - 1; i++) {
+    if (comparator(array[i], supportElement) < 0) leftArray.push(array[i])
+    else rightArray.push(array[i])
+  }
+  return [...quickSort(leftArray, comparator), supportElement, ...quickSort(rightArray, comparator)]
 }
 
-export const quickSort = (array: Array<any>, comparator: Function) =>
-  sort(array, 0, array.length - 1, comparator)

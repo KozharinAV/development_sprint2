@@ -14,10 +14,10 @@ export class AnalogClock {
     private minuteArrowRotation: number;
     private secondArrowRotation: number;
 
-    constructor() {
-        this.hourArrowRotation = 0;
-        this.minuteArrowRotation = 0;
-        this.secondArrowRotation = 0;
+    constructor(hourArrowRotation: number, minuteArrowRotation: number, secondArrowRotation: number) {
+        this.hourArrowRotation = hourArrowRotation;
+        this.minuteArrowRotation = minuteArrowRotation;
+        this.secondArrowRotation = secondArrowRotation;
     }
 
     setHourArrowRotation(rotation: number): void {
@@ -52,9 +52,9 @@ export class AnalogClock {
 export class AnalogClockAdapter extends DigitalClock {
     private analogClock: AnalogClock;
 
-    constructor(analogClock: AnalogClock) {
+    constructor(hourArrowRotation: number, minuteArrowRotation: number, secondArrowRotation: number) {
         super();
-        this.analogClock = analogClock;
+        this.analogClock = new AnalogClock(hourArrowRotation, minuteArrowRotation, secondArrowRotation);
     }
 
     displayTime(): void {
