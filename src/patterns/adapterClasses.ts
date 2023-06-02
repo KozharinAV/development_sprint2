@@ -1,11 +1,26 @@
-class DigitalClock {
-    displayTime(): void {
-        const currentTime = new Date();
-        const hours = currentTime.getHours();
-        const minutes = currentTime.getMinutes();
-        const seconds = currentTime.getSeconds();
+interface Clock {
+    setTime(hours: number, minutes: number, seconds: number): void
+    displayTime(): void
+}
 
-        console.log(`Цифровые часы: ${hours}:${minutes}:${seconds}`);
+export class DigitalClock implements Clock {
+    private hours: number
+    private minutes: number
+    private seconds: number
+
+    constructor(hours: number, minutes: number, seconds: number) {
+        this.hours = hours
+        this.minutes = minutes
+        this.seconds = seconds
+    }
+    setTime(hours: number, minutes: number, seconds: number) {
+        this.hours = hours
+        this.minutes = minutes
+        this.seconds = seconds
+    }
+
+    displayTime(): void {
+        console.log(`Цифровые часы: ${this.hours}:${this.minutes}:${this.seconds}`);
     }
 }
 
@@ -49,12 +64,11 @@ export class AnalogClock {
     }
 }
 
-export class AnalogClockAdapter extends DigitalClock {
+export class AnalogClockAdapter implements Clock {
     private analogClock: AnalogClock;
 
-    constructor(hourArrowRotation: number, minuteArrowRotation: number, secondArrowRotation: number) {
-        super();
-        this.analogClock = new AnalogClock(hourArrowRotation, minuteArrowRotation, secondArrowRotation);
+    constructor(analogClock: AnalogClock) {
+        this.analogClock = analogClock;
     }
 
     displayTime(): void {
@@ -62,9 +76,15 @@ export class AnalogClockAdapter extends DigitalClock {
         const minutes = this.analogClock.getMinuteArrowRotation() / 6;
         const seconds = this.analogClock.getSecondArrowRotation() / 6;
 
-        console.log(`Стрелочные часы: ${this.analogClock.getHourArrowRotation()}:${this.analogClock.getMinuteArrowRotation()}:${this.analogClock.getSecondArrowRotation()}`)
-
         console.log(`Цифровые часы (Адаптер): ${hours}:${minutes}:${seconds}`);
+    }
+    setTime(hourArrowRotation: number, minuteArrowRotation: number, secondArrowRotation: number): void {
+        this.analogClock.setHourArrowRotation(hourArrowRotation)
+        this.analogClock.setMinuteArrowRotation(minuteArrowRotation)
+        this.analogClock.setSecondArrowRotation(secondArrowRotation)
+    }
+    getAnalogTime() {
+        this.analogClock.displayTime()
     }
 }
 
